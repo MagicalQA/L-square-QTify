@@ -54,20 +54,16 @@ function Search({ searchData, placeholder }) {
     const navigate = useNavigate();
     const onSubmit = (e, value) => {
         e.preventDefault();
-        console.log(value);
         navigate(`/album/${value.slug}`);
-        //Process form data, call API, set state etc.
     };
 
     return (
-        <div style={{ position: "relative" }}>
+        <div>
             <form
                 className={styles.wrapper}
-                onSubmit={(e) => {
-                    onSubmit(e, value);
-                }}
+                onSubmit={(e) => onSubmit(e, value)}
             >
-                <div {...getRootProps()}>
+                <div {...getRootProps()} className={styles.inputRoot}>
                     <input
                         name="album"
                         className={styles.search}
@@ -76,19 +72,18 @@ function Search({ searchData, placeholder }) {
                         {...getInputProps()}
                     />
                 </div>
-                <div>
-                    <button className={styles.searchButton} type="submit">
-                        <SearchIcon />
-                    </button>
-                </div>
+
+                <button className={styles.searchButton} type="submit">
+                    <SearchIcon />
+                </button>
             </form>
+
             {groupedOptions.length > 0 ? (
                 <Listbox {...getListboxProps()}>
                     {groupedOptions.map((option, index) => {
-                        // console.log(option);
-                        const artists = option.songs.reduce((accumulator, currentValue) => {
-                            accumulator.push(...currentValue.artists);
-                            return accumulator;
+                        const artists = option.songs.reduce((acc, cur) => {
+                            acc.push(...cur.artists);
+                            return acc;
                         }, []);
 
                         return (

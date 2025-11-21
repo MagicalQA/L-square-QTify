@@ -1,9 +1,23 @@
 .navbar {
-    background-color: var(--color-primary);
+    width: 100%;
     height: 74px;
-    width: 100vw;
-    padding: 0px 32px;
+    background-color: #34C94B;
+
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
+    padding: 0 32px;
+    box-sizing: border-box;
+}
+
+.logoWrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.searchWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
