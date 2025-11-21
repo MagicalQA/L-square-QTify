@@ -14,7 +14,7 @@ function Section({ title, endpoint }) {
             .catch((err) => console.error(err));
     }, [endpoint]);
 
-    const visibleAlbums = showAll ? albums : albums.slice(0, 6);
+    const visibleAlbums = showAll ? albums : albums;
 
     return (
         <div className={styles.container}>
