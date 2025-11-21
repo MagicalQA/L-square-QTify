@@ -24,7 +24,7 @@ function Section({ title, endpoint }) {
                     className={styles.toggle}
                     onClick={() => setShowAll(!showAll)}
                 >
-                    {showAll ? "Collapse" : "Show All"}
+                    {showAll ? "Show All" : "Collapse"}
                 </button>
             </div>
 
