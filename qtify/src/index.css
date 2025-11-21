@@ -6,6 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
 }
 
 code {
@@ -18,4 +20,5 @@ code {
   --color-primary: #34c94b;
   --color-card-bg: #ffffff;
   --color-bg: #121212;
+  --page-padding: 32px;
 }

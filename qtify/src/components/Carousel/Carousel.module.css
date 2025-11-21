@@ -1,0 +1,39 @@
+.navWrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+.navButton {
+    position: absolute;
+    top: 130px;
+    transform: translateY(-50%);
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    background: #34C94B;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.leftBtn {
+    left: -24px;
+}
+
+.rightBtn {
+    right: -10px;
+}
+
+.navButton svg {
+    width: 20px;
+    height: 20px;
+    background: transparent !important;
+}

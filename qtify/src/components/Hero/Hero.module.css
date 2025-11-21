@@ -1,11 +1,40 @@
 .hero {
-    background-color: var(--color-black);
+    width: 100%;
     height: 270px;
+
+    background-color: #121212;
+
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    gap: 30px;
+    justify-content: center;
+
+    gap: 40px;
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
     color: #FFFFFF;
-    ;
+    font-family: "Poppins", sans-serif;
+}
+
+.headingMain {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+
+    margin-bottom: 8px;
+}
+
+.headingSub {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.heroImage {
+    width: 212px;
+    height: auto;
 }
