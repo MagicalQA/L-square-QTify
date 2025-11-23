@@ -14,21 +14,32 @@ function Section({ title, endpoint }) {
     }, [endpoint]);
 
     const clean = title.replace(/\s+/g, "-").toLowerCase();
+    const isSongsSection = title.trim().toLowerCase() === "songs";
 
     return (
         <div className={styles.container}>
             <div className={styles.header}>
                 <h3 className={styles.title}>{title}</h3>
 
-                <button
-                    className={styles.toggle}
-                    onClick={() => setShowAll(!showAll)}
-                >
-                    {showAll ? "Show All" : "Collapse"}
-                </button>
+                {!isSongsSection && (
+                    <button
+                        className={styles.toggle}
+                        onClick={() => setShowAll(!showAll)}
+                    >
+                        {showAll ? "Show All" : "Collapse"}
+                    </button>
+                )}
             </div>
 
-            {showAll ? (
+            {isSongsSection ? (
+                <div className={styles.grid}>
+                    {/* Songs section should be implemented as a separate Songs component.
+                        This placeholder keeps layout if Section is used for songs unintentionally */}
+                    {albums.map((album) => (
+                        <Card key={album.id} {...album} />
+                    ))}
+                </div>
+            ) : showAll ? (
                 <div className={styles.grid}>
                     {albums.map((album) => (
                         <Card key={album.id} {...album} />

@@ -29,8 +29,8 @@ function Carousel({ items, renderItem, prevId, nextId }) {
                     1280: { slidesPerView: 6 },
                 }}
             >
-                {items.map((item) => (
-                    <SwiperSlide key={item.id}>
+                {items.map((item, index) => (
+                    <SwiperSlide key={item.id || item.title || index}>
                         {renderItem(item)}
                     </SwiperSlide>
                 ))}
